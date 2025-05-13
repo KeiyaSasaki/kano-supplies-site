@@ -1,51 +1,43 @@
+'use client';
 import React from 'react';
 import Link from 'next/link';
+import Header from './../components/Header';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-green-50 text-green-900">
-      <section className="py-12 text-center">
-        <h1 className="text-4xl font-bold mb-4">狩野設備工業株式会社</h1>
-        <p className="text-lg max-w-xl mx-auto">
-          私たちは配管・設備工事のプロフェッショナル集団です。安心・安全・確実な施工を提供します。
-        </p>
-      </section>
+    <main
+      className="min-h-screen bg-cover bg-center relative text-white"
+      style={{ backgroundImage: "url('/hero-bg.jpg')" }} // ← 公開用画像を配置
+    >
+      {/* 背景オーバーレイ */}
+      <div className="absolute inset-0 bg-black bg-opacity-40 z-0" />
 
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 max-w-5xl mx-auto">
-        <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h2 className="text-xl font-semibold mb-2 text-green-800">会社概要</h2>
-          <p className="text-gray-700 mb-4">会社の歴史、理念、強みを紹介します。</p>
-          <Link href="/about">
-            <span className="inline-block px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 cursor-pointer">
-              もっと見る
-            </span>
-          </Link>
-        </div>
+      {/* 全体レイアウト */}
+      <div className="relative z-10 flex flex-col min-h-screen">
+        {/* Header */}
+        <Header />
 
-        <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h2 className="text-xl font-semibold mb-2 text-green-800">サービス</h2>
-          <p className="text-gray-700 mb-4">私たちが提供する設備工事・保守サービスの詳細。</p>
+        {/* Hero (中央) */}
+        <div className="flex-grow flex flex-col items-center justify-center text-center px-6">
+          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 drop-shadow-lg">
+            株式会社狩野設備工業
+          </h1>
+          <p className="text-lg sm:text-xl mb-8 drop-shadow">
+            私たちは配管・設備工事のプロフェッショナル集団です。<br />
+            安心・安全・確実な施工を提供します。
+          </p>
           <Link href="/services">
-            <span className="inline-block px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 cursor-pointer">
-              もっと見る
+            <span className="inline-block px-8 py-4 bg-white bg-opacity-20 text-white border border-white rounded-full hover:bg-opacity-40 transition backdrop-blur-md">
+              → Click Here
             </span>
           </Link>
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h2 className="text-xl font-semibold mb-2 text-green-800">お問い合わせ</h2>
-          <p className="text-gray-700 mb-4">見積依頼・お問い合わせはこちらから。</p>
-          <Link href="/contact">
-            <span className="inline-block px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 cursor-pointer">
-              問い合わせる
-            </span>
-          </Link>
-        </div>
-      </section>
-
-      <footer className="py-6 text-center text-sm text-green-700">
-        © 2025 狩野設備工業株式会社
-      </footer>
+        {/* Footer */}
+        <footer className="py-6 text-center text-sm text-white drop-shadow">
+          © 2025 株式会社狩野設備工業 | 山形県南陽市宮内4552-1 | TEL 0238-47-7134
+        </footer>
+      </div>
     </main>
   );
 }
