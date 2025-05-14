@@ -9,3 +9,38 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+@font-face {
+  font-family: 'Kouzann';
+  src: url('./fonts/aoyagireisyosimo_ttf_2_01.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes flood {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.animate-flood {
+  animation: flood 2s ease-in-out forwards;
+}
+
+.animate-rise {
+  animation: rise 1.5s ease-out forwards;
+}
+
