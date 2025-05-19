@@ -25,7 +25,7 @@ export default function Services() {
   ];
 
   return (
-    <main className="flex flex-col bg-green-50 text-green-900 pt-[10px] min-h-screen">
+    <main className="flex flex-col min-h-screen pt-[10px] text-green-900 bg-gradient-to-br from-green-200 via-teal-100 to-blue-200">
       <Header />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-1 flex-grow">
